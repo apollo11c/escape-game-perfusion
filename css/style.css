@@ -1,0 +1,421 @@
+/* PALETTE DE COULEURS */
+:root {
+    --sand1: 240, 237, 230;
+    --bbraungreen: 0, 169, 122;
+
+    /* valeurs par défaut */
+    --color: var(--sand1);
+    --alpha: 0.85;
+}
+
+/* BASE */
+body {
+    margin: 0;
+    background: black;
+    font-family: Arial, sans-serif;
+}
+
+/* CONTENEUR ECRAN */
+.scene {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* IMAGE = FENETRE */
+.background-image {
+    position: relative;
+
+    aspect-ratio: 4 / 3; /* adapte selon ton image */
+
+    width: 90vw;          /* largeur dominante */
+    max-width: 1400px;
+
+    height: auto;         /* laissé automatique */
+
+    max-height: 90vh;     /* limite si écran petit */
+
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* BLOCS INTRO */
+
+/* Bloc ALERTE */
+.bloc-intro {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 70%;
+    max-width: 1000px;
+
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+
+    background-color: rgba(240,237,230,0.85);
+}
+
+/* Bouton Commencer */
+button {
+    background-color: rgb(var(--bbraungreen));
+    color: white;
+
+    border: none;
+    padding: clamp(6px, 0.8vw, 12px) clamp(12px, 1.5vw, 24px);
+    border-radius: 10px;
+
+    cursor: pointer;
+    font-size: clamp(12px, 1.7vw, 25px);
+}
+
+/* Style texte */
+h1 {
+    font-size: clamp(15px, 3vw, 40px);
+    color: rgb(var(--bbraungreen));
+}
+
+p {
+    font-size: clamp(10px, 1.5vw, 25px);
+}
+
+h2 {
+    font-size: clamp(12px, 1.7vw, 25px);
+}
+
+/* BLOCS SALLE 1 */
+
+/* Consignes */
+.bloc {
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 15px;
+    width: 70%;
+    max-width: 450px;
+
+    background: rgba(240,237,230,0.85);
+    border-radius: 10px;
+    text-align: center;
+
+    font-size: clamp(10px, 1.6vw, 18px);
+}
+
+/* CHRONO */
+#timerDisplay {
+    position: absolute;
+    top: 2%;
+    right: 3%;
+    background: rgba(240,237,230,0.9);
+    padding: 10px;
+    border-radius: 5px;
+	font-size: clamp(10px, 1.6vw, 18px);
+}
+
+/* PRESCRIPTION */
+#prescription {
+    position: absolute;
+    top: 31%;
+    left: 35%;
+    width: 26%;
+    height: 50%;
+
+	display: flex;
+}
+
+/* TEXTE PRESCRIPTION */
+.presc-text {
+    font-size: 12px; /* base neutre */
+    line-height: 1.1;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.presc-text div {
+    margin: 0;
+}
+
+/* CLIQUABLE */
+.clickable {
+    cursor: pointer;
+}
+
+.clickable:hover {
+    color: red;
+}
+
+/* ZOOM */
+.zone {
+    position: absolute;
+    width: 8%;
+    height: 5%;
+    cursor: pointer;
+
+    /* debug */
+    background: rgba(255,0,0,0.2);
+}
+
+/* PORTES */
+.porte {
+    position: absolute;
+    width: 10%;
+    height: 40%;
+    cursor: pointer;
+
+    /* debug */
+    background: rgba(255,0,0,0.2);
+}
+
+/* POPUP */
+.popup {
+    position: absolute;
+
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: clamp(6px, 1vw, 12px);
+
+    width: 60%;
+    max-width: 400px;
+
+    background: rgba(240,237,230,0.85);
+    border-radius: 10px;
+
+    text-align: center;
+
+    font-size: clamp(10px, 1.6vw, 18px);
+}
+
+.ligne-consigne {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: clamp(8px, 2vw, 20px); /* espace propre */
+}
+
+.popup p {
+    margin: 0;
+}
+
+/* Zoom patient */
+#zoomBloc {
+    position: absolute;
+
+    
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+    width: 60%;   
+    max-width: 700px; 
+
+    background: rgba(240,237,230,0.95);
+    padding: 8px;
+    border-radius: 10px;
+
+    text-align: center;
+
+    z-index: 20;
+}
+#zoomImage {
+    width: 100%; 
+    height: auto;     
+
+    max-height: 70vh; 
+    
+    object-fit: contain;
+}
+
+#zoomBloc img {
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+/* Desactivation des zones cliquables sur la prescription */
+.desactive {
+    pointer-events: none;
+}
+
+/* SALLE 2 */
+
+/* Objets pompe et valve et etiquettes voies et sites */
+.objet {
+    position: absolute;
+    left: 10%;
+	width: 12%;
+}
+
+.green {
+    border: 3px solid rgb(var(--bbraungreen));
+    border-radius: 15px;
+    top: 65%;
+}
+
+.white {
+    border: 3px solid white;
+    border-radius: 15px;
+    top: 50%;
+}
+
+
+#pompe {
+    top: 65%;
+    left: 6%;
+    width: 18%;
+}
+
+#valve {
+    top: 40%;
+    left: 10%;
+    width: 4%;
+}
+
+.zone-click {
+    position: absolute;
+
+    font-size: clamp(10px, 1.2vw, 16px);
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.voie {
+    background: rgb(var(--bbraungreen));
+    color: white;
+
+    padding: clamp(4px, 0.3vw, 8px) clamp(10px, 1vw, 14px);
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+.arrow-right {
+    display: flex;
+    align-items: center;
+}
+
+.arrow-right::before {
+    content: "";
+    
+    
+width: clamp(8px, 1vw, 16px);
+height: clamp(1px, 0.2vw, 3px);
+
+
+    background: #00a97a;
+}
+
+.arrow-right::after {
+    content: "";
+
+    width: 0;
+    height: 0;
+
+    border-top: clamp(4px, 0.6vw, 8px) solid transparent;
+border-bottom: clamp(4px, 0.6vw, 8px) solid transparent;
+border-left: clamp(6px, 1vw, 12px) solid #00a97a;
+}
+
+
+#voie1 {
+    top: 65%;
+    left: 28.5%;
+}
+
+#voie2 {
+    top: 79%;
+    left: 28.5%;
+}
+
+.site {
+    color: #f7f5ee;
+    font-weight: bold;
+}
+
+.dot {
+    width: clamp(4px, 1vw, 16px);
+height: clamp(4px, 1vw, 16px);
+    background: #f7f5ee;
+    border-radius: 50%;
+}
+
+
+.arrow-left {
+    display: flex;
+    align-items: center;
+}
+
+.arrow-left::after {
+    content: "";
+    
+    width: clamp(8px, 1vw, 16px);
+height: clamp(1px, 0.2vw, 3px);
+
+    background: #f7f5ee;
+}
+
+.arrow-left::before {
+    content: "";
+
+    width: 0;
+    height: 0;
+
+    border-top: clamp(4px, 0.6vw, 8px) solid transparent;
+border-bottom: clamp(4px, 0.6vw, 8px) solid transparent;
+border-right: clamp(6px, 1vw, 12px) solid #f7f5ee;
+}
+
+#siteA {
+    top: 61.5%;
+    left: 38.8%;
+}
+
+#siteB {
+    top: 74%;
+    left: 38.8%;
+}
+
+/* Bouton valider */
+#valider {
+    position: absolute;
+
+    bottom: 5%;
+    right: 5%;
+
+    padding: clamp(6px, 1vw, 12px) clamp(12px, 2vw, 20px);
+    font-size: clamp(12px, 1.2vw, 18px);
+
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+#transitionBloc .arrow {
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: clamp(16px, 2vw, 28px);
+}

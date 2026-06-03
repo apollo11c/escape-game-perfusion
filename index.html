@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Escape Game Perfusion</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="scene">
+
+    <div class="background-image" style="background-image: url('images/intro.png');">
+
+        <div class="bloc-intro" style="--color: var(--sand1); --alpha: 0.85;">
+
+            <h1>ALERTE</h1>
+
+            <p>
+                Un patient doit recevoir une perfusion en urgence.<br>
+                Lors de la préparation, plusieurs erreurs ont été commises.<br>
+                Sécurisez l’administration le plus vite possible !<br>
+                Corrigez les anomalies, vérifiez le matériel et lancez la perfusion en toute sécurité.<br>
+                A chaque erreur, vous perdrez du temps.<br>
+                Appuyez sur la cloche quand vous pensez avoir terminé.
+            </p>
+
+            <h2 id="timer">0:00</h2>
+
+            <button onclick="startGame()">Commencer</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/timer.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title>Salle 2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- CONTENEUR GLOBAL -->
+<div class="scene">
+
+    <!-- IMAGE = "fenêtre" -->
+    <div class="background-image" style="background-image: url('images/salle2.png');">
+
+        <!-- Chrono (dans l’image) -->
+        <div id="timerDisplay">0:00</div>
+
+	<!-- Bloc consignes -->
+	<div class="bloc">
+    		Vous arrivez auprès du patient. Mais une partie de la ligne de perfusion s’est débranchée... <br>
+		Reconnectez la ligne de perfusion du pousse seringue et reconfigurer le montage de la ligne de perfusion en placant correctement la valve anti-retour sur la ligne principale.
+	</div>
+
+	<!-- Pompe -->
+	<img src="images/pompe.png" id="pompe" class="objet green">
+
+	<!-- Valve -->
+	<img src="images/valve.png" id="valve" class="objet white">
+
+	<!-- Zones -->
+	<div id="voie1" class="zone-click" onclick="placerPompe('voie1')">
+    <span class="voie">voie 1</span>
+    <span class="arrow-right"></span>
+</div>
+
+<div id="voie2" class="zone-click" onclick="placerPompe('voie2')">
+    <span class="voie">voie 2</span>
+    <span class="arrow-right"></span>
+</div>
+
+	<div id="siteA" class="zone-click site" onclick="placerValve('siteA')">
+    		<span class="dot"></span>
+    		<span class="arrow-left"></span>
+    		site A
+	</div>
+
+	<div id="siteB" class="zone-click site" onclick="placerValve('siteB')">
+    		<span class="dot"></span>
+    		<span class="arrow-left"></span>
+    		site B
+	</div>
+
+	<!-- Bouton valider -->
+	<button id="valider">Valider</button>
+
+	<!-- Popup -->
+	<div id="popup" class="popup" style="display:none;">
+		<div class="ligne-consigne">
+		<span id="popup-text"></span>
+        	<span class="arrow">➡</span>
+		</div>
+	</div>
+
+	
+	<div id="transitionBloc" class="bloc-intro" style="display:none;">
+    		<p>
+        		Une collègue passe à proximité et s’arrête en vous voyant manipuler la ligne.
+        		Elle vous interpelle et vous pose alors quelques questions.
+    		</p>
+    		<div class="arrow">➡</div>
+	</div>
+    
+
+</div>
+
+<!-- SCRIPTS -->
+<script src="js/salle2.js"></script>
+<script src="js/timer.js"></script>
+
+</body>
+</html>

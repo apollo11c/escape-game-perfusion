@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Salle 1</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- CONTENEUR GLOBAL -->
+<div class="scene">
+
+    <!-- IMAGE = "fenêtre" -->
+    <div class="background-image" style="background-image: url('images/salle1.png');">
+
+        <!-- Chrono (dans l’image) -->
+        <div id="timerDisplay">0:00</div>
+
+        <!-- CONSIGNE PHASE 1 -->
+        <div id="consigne1" class="bloc">
+            Vous arrivez près de la chambre du patient à perfuser, avec la prescription médicale en main.&nbsp;&nbsp;&nbsp&nbsp&nbsp➡
+        </div>
+
+        <!-- CONSIGNE PHASE 2 -->
+        <div id="consigne2" class="bloc" style="display:none;">
+            Une incohérence se cache dans cette prescription.<br>
+            Saurez-vous la repérer ?<br>
+            Cliquez sur l'erreur.
+        </div>
+
+        <!-- PRESCRIPTION FIXÉE À L’IMAGE -->
+        <div id="prescription" class="desactive">
+
+            <div class="presc-text">
+
+                <div><b>PRESCRIPTION MÉDICALE</b></div>
+
+                <div>Date : 12/05/2026</div>
+
+                <div><b>Prescripteur :</b></div>
+                <div>Dr. MARTIN, réanimateur</div>
+                <div>Numéro RPPS : 9 10123456789</div>
+
+                <div><b>Patient :</b></div>
+                <div>Nom : DUPONT</div>
+                <div>Prénom : Jean</div>
+                <div>Date de naissance : 15/04/1947</div>
+                <div>Poids : 82 kg</div>
+
+                <div><b>Produit 1 :</b></div>
+                <div>Dénomination : Solution polyionique G5 1000 ml</div>
+                <div class="clickable" onclick="erreur()">Posologie : 1000 ml / 24 heures</div>
+		<div>Fréquence : tous les jours</div>
+		<div>Nombre total de perfusions : 10</div>
+		<div class="clickable" onclick="erreur()">Voie d’administration : Voie veineuse périphérique</div>
+		<div class="clickable" onclick="erreur()">Mode d’administration : Perfusion gravité</div>
+
+                <div><b>Produit 2 :</b></div>
+		<div>Dénomination : Chlorydrate de morphine injectable en ampoules de 10 mg/ml - 10 ml</div>
+                <div class="clickable" onclick="erreur()">Posologie : 20 mg / 24 h en perfusion continue</div>
+		<div>Fréquence : tous les jours</div>
+		<div>Nombre total de perfusions : 10</div>
+		<div>Préparation : Prélever 2 ml de chlorydrate de morphine (10 mg/ml) et diluer dans 46 ml de NaCl 0,9% (soit 0,416 mg/ml)</div>
+                <!-- BONNE RÉPONSE -->
+                <div class="clickable" onclick="bonneReponse()">
+                    Solvant : G5%
+                </div>
+		<div class="clickable" onclick="erreur()">Voie d’administration : Voie veineuse périphérique</div>
+		<div>Mode d’administration : Pousse-seringue électrique</div>
+		<div>Débit : à programmer</div>
+
+            </div>
+        </div>
+
+        <!-- CONSIGNE PHASE 3 -->
+        <div id="consigne3" class="bloc" style="display:none;">
+            Deux chambres sont face à vous.<br>
+            Quelle est celle de votre patient ?
+        </div>
+
+        <!-- ZOOM PATIENT (positions ajustables) -->
+        <div id="zoom1" class="zone" style="top:15%; left:16%; display:none;" onclick="zoom('images/zoom_patient1.png')"></div>
+        <div id="zoom2" class="zone" style="top:15%; left:69%; display:none;" onclick="zoom('images/zoom_patient2.png')"></div>
+
+        <!-- CHOIX PORTES (ajustables aussi) -->
+        <div id="porte1" class="porte" style="top:20%; left:27%; display:none;" onclick="choixPorte(1)"></div>
+        <div id="porte2" class="porte" style="top:20%; left:56%; display:none;" onclick="choixPorte(2)"></div>
+
+<!-- POPUP -->
+<div id="popup" class="popup" style="display:none;">
+
+    <div class="ligne-consigne">
+        <span id="popup-text"></span>
+        <span class="arrow">➡</span>
+    </div>
+
+</div>
+
+<!-- ZOOM -->
+<div id="zoomBloc" style="display:none;">
+    <span class="close" onclick="fermerZoom()">✖</span>
+    <img id="zoomImage">
+</div>
+
+    </div>
+
+</div>
+
+<script src="js/salle1.js"></script>
+<script src="js/timer.js"></script>
+
+</body>
+</html>

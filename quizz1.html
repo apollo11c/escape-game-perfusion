@@ -15,61 +15,62 @@
         <div id="timerDisplay">0:00</div>
 
         <!-- ========================= -->
-        <!-- QUESTION 1 -->
-        <!-- ========================= -->
-        <div id="q1" class="bloc">
-            <p><b>Quels facteurs influencent la stabilité d'un médicament à perfuser ?</b></p>
+	<!-- QUESTION 1 -->
+	<!-- ========================= -->
+	<div id="q1" class="bloc-intro">
 
-            <div class="choix" onclick="mauvaise()">L'état physiopathologique du patient</div>
-            <div class="choix" onclick="bonneQ1()">Le solvant de dilution</div>
-        </div>
+    	<p><b>Quels facteurs influencent la stabilité d'un médicament à perfuser ?</b></p>
+
+    	<!-- choix -->
+    	<div class="choix" onclick="toggleChoix(this)" data-correct="true">L'exposition à la lumière</div>
+<div class="choix" onclick="toggleChoix(this)" data-correct="true">La concentration</div>
+<div class="choix" onclick="toggleChoix(this)" data-correct="false">L'état physiopathologique du patient</div>
+<div class="choix" onclick="toggleChoix(this)" data-correct="true">Le solvant de dilution</div>
+<div class="choix" onclick="toggleChoix(this)" data-correct="false">Le volume d'air dans la poche</div>
+
+
+    	<!-- bouton -->
+    	<button onclick="validerQ1()">Valider</button>
+
+	</div>
 
         <!-- ========================= -->
         <!-- REPONSE Q1 -->
-        <!-- ========================= -->
-        <div id="r1" class="bloc" style="display:none;">
-            <p>
-                ✅ Bonne réponse.<br><br>
+<div id="reponseQ1" class="bloc-intro" style="display:none;">
 
-                Facteurs influençant la stabilité :<br>
-                - lumière<br>
-                - concentration<br>
-                - solvant<br>
-                - température<br>
-                - matériaux<br>
-            </p>
+    <p id="texteQ1"></p>
 
-            <div class="arrow" onclick="afficherQ2()">➡</div>
-        </div>
+    <div class="arrow" onclick="allerQ2()">➡</div>
+
+</div>
 
         <!-- ========================= -->
         <!-- QUESTION 2 -->
         <!-- ========================= -->
-        <div id="q2" class="bloc" style="display:none;">
-            <p><b>Quels facteurs influencent le délai pour atteindre le patient ?</b></p>
+        <div id="q2" class="bloc-intro" style="display:none;">
 
-            <div class="choix" onclick="mauvaise()">Moment de la journée</div>
-            <div class="choix" onclick="bonneQ2()">Montage de la perfusion</div>
-        </div>
+    <p><b>Quels facteurs influencent le délai d'arrivée du médicament ?</b></p>
+
+	<div class="choix" onclick="toggleChoix(this)" data-correct="true">Du montage de la perfusion</div>
+	<div class="choix" onclick="toggleChoix(this)" data-correct="true">De la pression vasculaire du patient</div>
+	<div class="choix" onclick="toggleChoix(this)" data-correct="true">De la solution de perfusion utilisée</div>
+	<div class="choix" onclick="toggleChoix(this)" data-correct="false">Du moment de la journée</div>
+    <button onclick="validerQ2()">Valider</button>
+
+</div>
 
         <!-- ========================= -->
         <!-- REPONSE Q2 -->
         <!-- ========================= -->
-        <div id="r2" class="bloc" style="display:none;">
-            <p>
-                ✅ Bonne réponse.<br><br>
+<div id="reponseQ2" class="bloc-intro" style="display:none;">
 
-                Facteurs :<br>
-                - montage<br>
-                - pression vasculaire<br>
-                - viscosité<br>
-                - débit<br>
-            </p>
+    <p id="texteQ2"></p>
 
-            <div class="arrow" onclick="fin()">➡</div>
-        </div>
+    <div class="arrow" onclick="allerSalle3()">➡</div>
 
-    </div>
+</div>
+
+
 
 </div>
 

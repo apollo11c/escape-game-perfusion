@@ -405,11 +405,11 @@ border-right: clamp(6px, 1vw, 12px) solid #f7f5ee;
     bottom: 5%;
     right: 5%;
 
-    padding: clamp(6px, 1vw, 12px) clamp(12px, 2vw, 20px);
-    font-size: clamp(12px, 1.2vw, 18px);
+    padding: clamp(6px, 0.8vw, 12px) clamp(12px, 1.2vw, 20px);
+    font-size: clamp(12px, 1vw, 18px);
 
     border: none;
-    border-radius: 10px;
+    border-radius: clamp(4px, 0.6vw, 8px);
     cursor: pointer;
 }
 
@@ -427,12 +427,13 @@ border-right: clamp(6px, 1vw, 12px) solid #f7f5ee;
 	position: relative;
     z-index: 1;
 
-    margin-top: 8px;
-    padding: 8px;
-    border-radius: 8px;
+    margin-top: clamp(4px, 0.6vw, 8px);
+    padding: clamp(4px, 0.6vw, 8px);
+    border-radius: clamp(4px, 0.6vw, 8px);
 
     background: rgba(240,237,230,0.8);
     cursor: pointer;
+	font-size: clamp(11px, 1.5vw, 18px);
 }
 
 .choix.selected {

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quizz 1</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="scene">
+
+    <div class="background-image" style="background-image: url('images/salle2.png');">
+
+        <!-- CHRONO -->
+        <div id="timerDisplay">0:00</div>
+
+        <!-- ========================= -->
+        <!-- QUESTION 1 -->
+        <!-- ========================= -->
+        <div id="q1" class="bloc">
+            <p><b>Quels facteurs influencent la stabilité d'un médicament à perfuser ?</b></p>
+
+            <div class="choix" onclick="mauvaise()">L'état physiopathologique du patient</div>
+            <div class="choix" onclick="bonneQ1()">Le solvant de dilution</div>
+        </div>
+
+        <!-- ========================= -->
+        <!-- REPONSE Q1 -->
+        <!-- ========================= -->
+        <div id="r1" class="bloc" style="display:none;">
+            <p>
+                ✅ Bonne réponse.<br><br>
+
+                Facteurs influençant la stabilité :<br>
+                - lumière<br>
+                - concentration<br>
+                - solvant<br>
+                - température<br>
+                - matériaux<br>
+            </p>
+
+            <div class="arrow" onclick="afficherQ2()">➡</div>
+        </div>
+
+        <!-- ========================= -->
+        <!-- QUESTION 2 -->
+        <!-- ========================= -->
+        <div id="q2" class="bloc" style="display:none;">
+            <p><b>Quels facteurs influencent le délai pour atteindre le patient ?</b></p>
+
+            <div class="choix" onclick="mauvaise()">Moment de la journée</div>
+            <div class="choix" onclick="bonneQ2()">Montage de la perfusion</div>
+        </div>
+
+        <!-- ========================= -->
+        <!-- REPONSE Q2 -->
+        <!-- ========================= -->
+        <div id="r2" class="bloc" style="display:none;">
+            <p>
+                ✅ Bonne réponse.<br><br>
+
+                Facteurs :<br>
+                - montage<br>
+                - pression vasculaire<br>
+                - viscosité<br>
+                - débit<br>
+            </p>
+
+            <div class="arrow" onclick="fin()">➡</div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/quizz1.js"></script>
+<script src="js/timer.js"></script>
+
+</body>
+</html>

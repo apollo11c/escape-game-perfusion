@@ -419,3 +419,29 @@ border-right: clamp(6px, 1vw, 12px) solid #f7f5ee;
     cursor: pointer;
     font-size: clamp(16px, 2vw, 28px);
 }
+
+/* QUIZZ 1 */
+
+.choix {
+	
+	position: relative;
+    z-index: 1;
+
+    margin-top: 8px;
+    padding: 8px;
+    border-radius: 8px;
+
+    background: rgba(240,237,230,0.8);
+    cursor: pointer;
+}
+
+.choix.selected {
+    background: rgb(var(--bbraungreen));
+    color: white;
+}
+
+
+.choix:hover {
+    background: rgb(var(--bbraungreen));
+    color: white;
+}

@@ -13,6 +13,9 @@ function validerRonds() {
     let ronds = document.querySelectorAll(".zone-rond");
     let bonne = true;
 
+    let popup = document.getElementById("popup");
+    let texte = document.getElementById("popup-text");
+
     ronds.forEach(function(el) {
 
         let selectionne = el.classList.contains("selected");
@@ -23,7 +26,7 @@ function validerRonds() {
         }
     });
 
-    // ✅ BONNE REPONSE
+    // BONNE REPONSE
     if (bonne) {
 
         // cacher ronds et bouton
@@ -31,19 +34,55 @@ function validerRonds() {
         document.getElementById("valider").style.display = "none";
 
         // afficher bloc
-        let bloc = document.getElementById("reponseSalle3");
-        bloc.style.display = "block";
+        texte.innerHTML =
+        `Bien vu ! Vous avez relevé les erreurs suivantes :<br>
+        - Écriture au marqueur directement sur les poches<br>
+        - Chambre compte-goutte pas assez remplie et prise d’air ouverte<br>
+        - Bulles d’air dans la ligne<br>
+        - Mauvaise étiquette sur la seringue<br>
+        - Pansement opaque<br>
+        - Aiguille qui traine`;
+        popup.style.display = "block";
 
-        document.getElementById("texteSalle3").innerHTML =
-        `Bonne réponse !<br><br>
-        Plusieurs erreurs pouvaient être identifiées sur la ligne de perfusion.
-        Il est essentiel de vérifier chaque élément du montage afin d'assurer la sécurité du patient.`;
+	
+	document.getElementById("zone-rond-1").onclick = null;
+	document.getElementById("zone-rond-2").onclick = null;
+    document.getElementById("zone-rond-3").onclick = null;
+    document.getElementById("zone-rond-4").onclick = null;
+    document.getElementById("zone-rond-5").onclick = null;
+    document.getElementById("zone-rond-6").onclick = null;
+    document.getElementById("zone-rond-7").onclick = null;
+
+
+        // clic popup → page suivante
+        popup.onclick = function () {
+
+    		popup.style.display = "none";
+		document.querySelector(".bloc").style.display = "none";
+
+    		// afficher le bloc intermédiaire
+    		let transition = document.getElementById("transitionBloc");
+    		transition.style.display = "block";
+
+    		// clic flèche → page suivante
+    		transition.querySelector(".arrow").onclick = function () {
+        		window.location.href = "quizz2.html";
+    		};
+        }
     }
 
-    // ❌ MAUVAISE REPONSE
+    // MAUVAISE REPONSE
     else {
+
+        texte.innerText = "Mauvaise configuration (+15 sec)";
+        popup.style.display = "block";
+
         ajouterPenalite(15);
-        afficherPopup("Mauvaise réponse (+15 sec)");
+
+        // clic popup → fermer
+        popup.onclick = function () {
+            popup.style.display = "none";
+        };
     }
 }
 
@@ -61,11 +100,3 @@ function afficherPopup(msg) {
         popup.style.display = "none";
     };
 }
-
-// =========================
-// SUIVANT
-// =========================
-function allerSalle4() {
-    window.location.href = "salle4.html";
-}
-``

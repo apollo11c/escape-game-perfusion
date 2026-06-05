@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>Salle 3</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- CONTENEUR GLOBAL -->
+<div class="scene">
+
+    <!-- IMAGE = "fenêtre" -->
+    <div class="background-image" style="background-image: url('images/salle3.png');">
+
+        <!-- Chrono (dans l’image) -->
+        <div id="timerDisplay">0:00</div>
+
+	<!-- Bloc consignes -->
+	<div class="bloc">
+    		Vous observez la ligne de perfusion dans son ensemble. Vous repérez immédiatement que plusieurs éléments ne vont pas.<br> 
+Sélectionnez les zones de la ligne de perfusion qui contiennent des erreurs ou présentent un risque.
+	</div>
+
+<!-- ========================= -->
+<!-- ZONES CLIQUABLES (ronds) -->
+<!-- ========================= -->
+
+<div class="zone-rond" onclick="toggleRond(this)" data-correct="true" style="top:15%; left:18%; width:clamp(12px, 5vw, 70px); height:clamp(12px, 5vw, 70px);"></div>
+<div class="zone-rond" onclick="toggleRond(this)" data-correct="true" style="top:60%; left:55%; width:clamp(12px, 3vw, 40px); height:clamp(12px, 3vw, 40px);"></div>
+<div class="zone-rond" onclick="toggleRond(this)" data-correct="true" style="top:70%; left:25%; width:clamp(12px, 3vw, 40px); height:clamp(12px, 3vw, 40px);"></div>
+<div class="zone-rond" onclick="toggleRond(this)" data-correct="true" style="top:70%; left:25%; width:clamp(12px, 3vw, 40px); height:clamp(12px, 3vw, 40px);"></div>
+<div class="zone-rond" onclick="toggleRond(this)" data-correct="true" style="top:70%; left:25%; width:clamp(12px, 3vw, 40px); height:clamp(12px, 3vw, 40px);"></div>
+<div class="zone-rond" onclick="toggleRond(this)" data-correct="true" style="top:70%; left:25%; width:clamp(12px, 3vw, 40px); height:clamp(12px, 3vw, 40px);"></div>
+<div class="zone-rond" onclick="toggleRond(this)" data-correct="false" style="top:70%; left:25%; width:clamp(12px, 3vw, 40px); height:clamp(12px, 3vw, 40px);"></div>
+
+
+<!-- bouton -->
+<button id="valider" onclick="validerRonds()">Valider</button>
+
+<!-- ========================= -->
+<!-- REPONSE (bloc centré) -->
+<!-- ========================= -->
+<div id="reponseSalle3" class="bloc-intro" style="display:none;">
+
+    <p id="texteSalle3"></p>
+
+    <div class="arrow" onclick="allerSalle4()">➡</div>
+
+</div>
+
+<!-- POPUP ERREUR -->
+<div id="popup" class="popup" style="display:none;">
+    <div class="ligne-consigne">
+        <span id="popup-text"></span>
+        <span class="arrow">➡</span>
+    </div>
+</div>
+
+</div>
+
+<!-- SCRIPTS -->
+<script src="js/salle3.js"></script>
+<script src="js/timer.js"></script>
+
+</body>
+</html>

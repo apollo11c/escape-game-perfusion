@@ -446,3 +446,32 @@ border-right: clamp(6px, 1vw, 12px) solid #f7f5ee;
     background: rgb(var(--bbraungreen));
     color: white;
 }
+
+/* SALLE 3 */
+
+.zone-rond {
+    position: absolute;
+
+    width: clamp(14px, 2.2vw, 34px);
+    height: clamp(14px, 2.2vw, 34px);
+
+    border-radius: 50%;
+
+    /* ✅ cercle vide */
+    background-color: transparent;
+    border: 2px solid #fff5dd;
+
+    cursor: pointer;
+
+transform: translate(-50%, -50%);
+}
+
+/* sélection */
+.zone-rond.selected {
+    border: 3px solid #00a97a;
+}
+
+
+.zone-rond:hover {
+    border-color: #00a97a;
+}

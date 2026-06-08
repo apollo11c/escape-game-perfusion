@@ -1,0 +1,100 @@
+<html>
+<head>
+    <title>Salle 4</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- CONTENEUR GLOBAL -->
+<div class="scene">
+
+    <!-- IMAGE = "fenêtre" -->
+    <div class="background-image" style="background-image: url('images/salle4.png');">
+
+        <!-- Chrono (dans l’image) -->
+        <div id="timerDisplay">0:00</div>
+
+	<!-- Bloc consignes -->
+	<div class="bloc-bas">
+    		Vous devez maintenant programmer la perfusion sur le pousse-seringue.<br>
+D’après la prescription : <br>
+Dénomination : Chlorydrate de morphine injectable en ampoules de 10 mg/ml - 10 ml<br>
+Posologie : 20 mg / 24 h en perfusion continue<br>
+Préparation : Prélever 2 ml de chlorydrate de morphine (10 mg/ml) et diluer dans 46 ml de NaCl 0,9% (soit 0,416 mg/ml)<br>
+Sélectionnez le bon médicament et calculez le débit en mL/h pour démarrer la perfusion.
+	</div>
+
+
+<!-- ========================= -->
+<!-- FENETRE POUSSE SERINGUE -->
+<!-- ========================= -->
+
+<div id="fenetre-pse">
+
+    <!-- TITRE -->
+    <div class="titre-pse">
+        MEDICAMENT
+    </div>
+
+    <!-- BLOCS MEDICAMENT -->
+    <div class="medicament"
+         onclick="selectionMedicament(this)"
+         data-correct="true">
+        Chlorhydrate de morphine
+    </div>
+
+    <div class="medicament"
+         onclick="selectionMedicament(this)"
+         data-correct="false">
+        Dobutamine
+    </div>
+
+    <div class="medicament"
+         onclick="selectionMedicament(this)"
+         data-correct="false">
+        Fentanyl
+    </div>
+
+    <!-- MENU BAS -->
+    <div class="menu-pse">
+
+        <div class="menu-actif">MEDICAMENT</div>
+
+        <div class="menu-inactif">PATIENT</div>
+
+        <div class="menu-inactif">PERFUSION</div>
+
+        <div class="menu-inactif">DEMARRER PERFUSION</div>
+
+    </div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- REPONSE  -->
+<!-- ========================= -->
+<div id="popup" class="popup" style="display:none;">
+		<div class="ligne-consigne">
+		<span id="popup-text"></span>
+        	<span class="arrow">➡</span>
+		</div>
+	</div>
+
+
+<div id="transitionBloc" class="bloc-intro" style="display:none;">
+    		<p>
+        		Alors que vous vous apprêtiez à démarrer la perfusion, vous vous questionnez un instant.
+    		</p>
+    		<div class="arrow">➡</div>
+	</div>
+
+</div>
+
+<!-- SCRIPTS -->
+<script src="js/salle4.js"></script>
+<script src="js/timer.js"></script>
+
+</body>
+</html>

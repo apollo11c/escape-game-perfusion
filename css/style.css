@@ -475,3 +475,308 @@ transform: translate(-50%, -50%);
 .zone-rond:hover {
     border-color: #00a97a;
 }
+
+/* SALLE 4 */
+
+.bloc-bas {
+    position: absolute;
+
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 90%;
+
+    padding: 12px;
+    border-radius: 10px;
+
+    background-color: rgba(240,237,230,0.9);
+
+    text-align: left;
+
+    font-size: clamp(10px, 1.2vw, 18px);
+}
+
+/* =========================
+FENETRE PSE
+========================= */
+
+#fenetre-pse {
+    position: absolute;
+
+    top: 20.3%;
+    left: 31%;
+    transform: translateX(-50%);
+
+    width: 34%;
+    height: 17%;
+
+    background: #d9d9d9;
+
+	padding: 0.3% 0.3% 0 0.3%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* titre */
+.titre-pse {
+    font-size: clamp(5px, 0.7vw, 12px);
+
+    margin-bottom: 1%;
+}
+
+
+
+/* blocs medicaments */
+.medicament {
+    background: white;
+
+    border: 1px solid black;
+
+    padding: clamp(2px, 0.3vw, 6px);
+
+    margin-bottom: 0.5%;
+
+    font-size: clamp(4px, 0.65vw, 10px);
+
+    cursor: pointer;
+}
+
+/* hover */
+.medicament:hover {
+    background: #eeeeee;
+}
+
+
+/* selection */
+.medicament.selected {
+    border: 2px solid #00a97a;
+}
+
+/* menu bas */
+.menu-pse {
+    margin-top: auto;
+
+    display: flex;
+}
+
+
+
+/* onglets */
+.menu-actif,
+.menu-inactif {
+
+    flex: 1;
+
+    text-align: center;
+
+    padding: clamp(2px, 0.25vw, 5px);
+
+    font-size: clamp(4px, 0.55vw, 9px);
+
+    border: 1px solid black;
+}
+
+
+.menu-actif {
+    background: #d9d9d9;
+    border-bottom: none;
+}
+
+.menu-inactif {
+    background: white;
+}
+
+/* =========================
+VISUEL PERFUSION
+========================= */
+
+.titre-ligne {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: clamp(5px, 0.7vw, 12px);
+
+    margin-bottom: 1%;
+}
+
+.petit-titre {
+    font-size: clamp(4px, 0.5vw, 9px);
+}
+
+.contenu-perfusion {
+    display: flex;
+    gap: 2%;
+
+    flex: 1;
+}
+
+/* case débit */
+.case-debit {
+    flex: 1;
+
+    background: white;
+    border: 1px solid black;
+
+    position: relative;
+
+    cursor: pointer;
+}
+
+.case-debit:hover {
+    background: #eeeeee;
+}
+
+.texte-vert {
+    color: #00a97a;
+
+    font-size: clamp(5px, 0.7vw, 11px);
+
+    padding: 4%;
+}
+
+/* rond */
+.rond-vert {
+    position: absolute;
+
+    bottom: 25%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: clamp(10px, 1.5vw, 24px);
+    height: clamp(10px, 1.5vw, 24px);
+
+    border: 3px solid #00a97a;
+    border-radius: 50%;
+}
+
+/* colonne droite */
+.colonne-droite {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 6%;
+}
+
+/* petites cases */
+.petite-case {
+    flex: 1;
+
+    background: white;
+    border: 1px solid black;
+}
+
+/* bloc calcul */
+.bloc-calcul {
+    width: 25%;
+
+    background: white;
+    border: 1px solid black;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.plus {
+    color: #00a97a;
+
+    font-size: clamp(16px, 2vw, 32px);
+
+    line-height: 1;
+}
+
+.texte-calcul {
+    text-align: center;
+
+    font-size: clamp(4px, 0.6vw, 10px);
+}
+
+.zone-saisie {
+    display: flex;
+    align-items: center;
+    gap: 2%;
+
+    flex: 1;
+}
+
+.case-input {
+    width: clamp(18px, 3vw, 45px);
+    height: clamp(25px, 4vw, 60px);
+
+    background: white;
+    border: 1px solid black;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: clamp(10px, 1.5vw, 24px);
+
+    cursor: pointer;
+}
+
+.clavier {
+    display: flex;
+
+    width: 100%;
+}
+
+.touche {
+
+    flex: 1;
+
+    background: white;
+
+    border: 1px solid black;
+
+    text-align: center;
+
+    padding: clamp(4px, 0.5vw, 10px);
+
+    font-size: clamp(8px, 1vw, 16px);
+
+    cursor: pointer;
+}
+
+.case-input.active {
+    border: 2px solid #00a97a;
+    color: #00a97a;
+}
+
+/* débit centré */
+.debit-centre {
+
+    width: 100%;
+    text-align: center;
+
+    margin-top: 20%;
+
+    font-size: clamp(8px, 1vw, 18px);
+}
+
+/* bouton démarrer */
+.menu-demarrer {
+
+    flex: 1;
+
+    background: #00a97a;
+    color: white;
+
+    border: 1px solid black;
+
+    text-align: center;
+
+    padding: clamp(2px, 0.3vw, 6px);
+
+    font-size: clamp(4px, 0.6vw, 10px);
+
+    cursor: pointer;
+}

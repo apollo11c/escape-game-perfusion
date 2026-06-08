@@ -37,11 +37,11 @@ function validerRonds() {
         texte.innerHTML =
         `Bien vu ! Vous avez relevé les erreurs suivantes :<br>
         - Écriture au marqueur directement sur les poches<br>
-        - Chambre compte-goutte pas assez remplie et prise d’air ouverte<br>
-        - Bulles d’air dans la ligne<br>
-        - Mauvaise étiquette sur la seringue<br>
+        - Chambre compte-goutte pas assez remplie<br>
+        - Bulles d’air dans la ligne de perfusion<br>
+        - Mauvaise étiquette sur la seringue ou mauvais produit administré<br>
         - Pansement opaque<br>
-        - Aiguille qui traine`;
+        - Aiguille non sécurisée laissée à découvert`;
         popup.style.display = "block";
 
 	

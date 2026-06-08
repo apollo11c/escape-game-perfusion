@@ -1,0 +1,65 @@
+<html>
+<head>
+    <title>Salle 3</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- CONTENEUR GLOBAL -->
+<div class="scene">
+
+    <!-- IMAGE = "fenêtre" -->
+    <div class="background-image" style="background-image: url('images/salle3.png');">
+
+        <!-- Chrono (dans l’image) -->
+        <div id="timerDisplay">0:00</div>
+
+	<!-- Bloc consignes -->
+	<div class="bloc">
+    		Vous observez la ligne de perfusion dans son ensemble. Vous repérez immédiatement que plusieurs éléments ne vont pas.<br> 
+Sélectionnez les zones de la ligne de perfusion qui contiennent des erreurs ou présentent un risque.
+	</div>
+
+<!-- ========================= -->
+<!-- ZONES CLIQUABLES (ronds) -->
+<!-- ========================= -->
+
+<div id="zone-rond-1" class="zone-rond" onclick="toggleRond(this)" data-correct="true" style="top:22%; left:15%; width:clamp(20px, 30vw, 150px); height:clamp(20px, 30vw, 150px);"></div>
+<div id="zone-rond-2" class="zone-rond" onclick="toggleRond(this)" data-correct="true" style="top:54%; left:15%; width:clamp(18px, 15vw, 60px); height:clamp(18px, 15vw, 60px);"></div>
+<div id="zone-rond-3" class="zone-rond" onclick="toggleRond(this)" data-correct="false" style="top:75%; left:15.3%; width:clamp(12px, 2vw, 40px); height:clamp(12px, 2vw, 40px);"></div>
+<div id="zone-rond-4" class="zone-rond" onclick="toggleRond(this)" data-correct="true" style="top:85%; left:24%; width:clamp(12px, 3vw, 40px); height:clamp(12px, 3vw, 40px);"></div>
+<div id="zone-rond-5" class="zone-rond" onclick="toggleRond(this)" data-correct="true" style="top:73%; left:60%; width:clamp(18px, 15vw, 55px); height:clamp(18px, 15vw, 55px);"></div>
+<div id="zone-rond-6" class="zone-rond" onclick="toggleRond(this)" data-correct="true" style="top:68%; left:78%; width:clamp(18px, 15vw, 70px); height:clamp(18px, 15vw, 70px);"></div>
+<div id="zone-rond-7" class="zone-rond" onclick="toggleRond(this)" data-correct="true" style="top:35%; left:40%; width:clamp(18px, 20vw, 100px); height:clamp(18px, 20vw, 100px);"></div>
+
+
+<!-- bouton -->
+<button id="valider" onclick="validerRonds()">Valider</button>
+
+<!-- ========================= -->
+<!-- REPONSE (bloc centré) -->
+<!-- ========================= -->
+<div id="popup" class="popup" style="display:none;">
+		<div class="ligne-consigne">
+		<span id="popup-text"></span>
+        	<span class="arrow">➡</span>
+		</div>
+	</div>
+
+
+<div id="transitionBloc" class="bloc-intro" style="display:none;">
+    		<p>
+        		Alors que vous vous apprêtiez à démarrer la perfusion, vous vous questionnez un instant.
+    		</p>
+    		<div class="arrow">➡</div>
+	</div>
+
+</div>
+
+<!-- SCRIPTS -->
+<script src="js/salle3.js"></script>
+<script src="js/timer.js"></script>
+
+</body>
+</html>

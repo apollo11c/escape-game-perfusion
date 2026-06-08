@@ -514,6 +514,15 @@ FLECHE SOUS LE ROND 7
     border-top: 10px solid #00a97a;
 }
 
+.rond-fleche.selected {
+    border: 3px solid #00a97a;
+}
+
+
+.rond-fleche:hover {
+    border-color: #00a97a;
+}
+
 /* SALLE 4 */
 
 .bloc-bas {

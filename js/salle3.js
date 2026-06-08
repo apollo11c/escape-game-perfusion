@@ -66,7 +66,7 @@ function validerRonds() {
 
     		// clic flèche → page suivante
     		transition.querySelector(".arrow").onclick = function () {
-        		window.location.href = "quizz2.html";
+        		window.location.href = "salle4.html";
     		};
         }
     }

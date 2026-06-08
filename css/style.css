@@ -827,3 +827,76 @@ VISUEL PERFUSION
 
     cursor: pointer;
 }
+
+/* ---------- Q2 scale and labels ---------- */
+.q2-grid {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.scale {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.scale-arrow {
+    font-size: clamp(20px, 3vw, 36px);
+}
+
+.graduations {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.graduation {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.grad-label {
+    min-width: 48px;
+    text-align: right;
+    color: #333;
+}
+
+.slot {
+    width: 180px;
+    min-height: 30px;
+    background: rgba(240,237,230,0.6);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.label-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    padding: 8px 12px;
+    background: rgba(240,237,230,0.9);
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.label.selected-label {
+    outline: 3px solid #00a97a;
+    background: rgb(var(--bbraungreen));
+    color: white;
+}
+
+.slot .label {
+    background: transparent;
+    padding: 4px 8px;
+}

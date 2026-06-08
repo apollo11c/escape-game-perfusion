@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quizz 2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="scene">
+
+    <div class="background-image" style="background-image: url('images/salle3.png');">
+
+        <!-- CHRONO -->
+        <div id="timerDisplay">0:00</div>
+
+        <!-- ========================= -->
+	<!-- QUESTION 1 -->
+	<!-- ========================= -->
+	<div id="q1" class="bloc-intro">
+
+    	<p><b>Quels sont les facteurs qui influencent le débit d'une perfusion par gravité ?</b></p>
+
+    	<!-- choix -->
+    	<div class="choix" onclick="toggleChoix(this)" data-correct="true">La hauteur de la poche par rapport au patient</div>
+<div class="choix" onclick="toggleChoix(this)" data-correct="true">Les mouvements du patient</div>
+<div class="choix" onclick="toggleChoix(this)" data-correct="true">Les caractéristiques du perfuseur</div>
+<div class="choix" onclick="toggleChoix(this)" data-correct="true">La présence d'éléments sur la ligne de perfusion</div>
+
+
+    	<!-- bouton -->
+    	<button onclick="validerQ1()">Valider</button>
+
+	</div>
+
+        <!-- ========================= -->
+        <!-- REPONSE Q1 -->
+
+
+<div id="reponseQ1" class="bloc-intro" style="display:none;">
+
+    <p id="texteQ1"></p>
+
+    <div class="arrow" onclick="allerQ2()">➡</div>
+
+</div>
+
+
+<div id="popup" class="popup" style="display:none;">
+<div class="ligne-consigne">
+
+    <span id="popup-text"></span>
+
+    <div class="arrow">➡</div>
+
+</div>
+</div>
+
+        <!-- ========================= -->
+        <!-- QUESTION 2 -->
+        <!-- ========================= -->
+        <div id="q2" class="bloc-intro" style="display:none;">
+
+    <p><b>Placez chaque dispositif sous la graduation correspondant à sa précision (cliquez d'abord sur un dispositif, puis sur la graduation).</b></p>
+
+    <div class="q2-grid">
+        <!-- Colonne gauche : échelle verticale avec 5 graduations -->
+        <div class="scale" id="scale">
+            <div class="scale-arrow">⬇</div>
+            <div class="graduations">
+                <div class="graduation" data-index="0">
+                    <div class="grad-label">Pas de valeur de précision de débit dans la norme NF en ISO 8536-4</div>
+                    <div class="slot" onclick="placeOnGraduation(0)"></div>
+                </div>
+                <div class="graduation" data-index="1">
+                    <div class="grad-label">Pas de valeur de précision de débit dans la norme</div>
+                    <div class="slot" onclick="placeOnGraduation(1)"></div>
+                </div>
+                <div class="graduation" data-index="2">
+                    <div class="grad-label">+ ou - 15%</div>
+                    <div class="slot" onclick="placeOnGraduation(2)"></div>
+                </div>
+                <div class="graduation" data-index="3">
+                    <div class="grad-label">+ ou - 5%</div>
+                    <div class="slot" onclick="placeOnGraduation(3)"></div>
+                </div>
+                <div class="graduation" data-index="4">
+                    <div class="grad-label">+ ou - 3%</div>
+                    <div class="slot" onclick="placeOnGraduation(4)"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Colonne droite : liste d'étiquettes à placer -->
+        <div class="label-list" id="labelList">
+            <!-- L'utilisateur pourra modifier ces titres directement dans le HTML -->
+            <div class="label" onclick="selectLabel(this)" data-correct-index="1">Régulateur de débit</div>
+            <div class="label" onclick="selectLabel(this)" data-correct-index="3">Pompe volumétrique</div>
+            <div class="label" onclick="selectLabel(this)" data-correct-index="0">Roulette de débit du perfuseur</div>
+            <div class="label" onclick="selectLabel(this)" data-correct-index="4">Pousse-seringue électrique</div>
+            <div class="label" onclick="selectLabel(this)" data-correct-index="2">Diffuseur portable</div>
+        </div>
+    </div>
+
+    <button onclick="validerQ2()">Valider</button>
+
+</div>
+
+        <!-- ========================= -->
+        <!-- REPONSE Q2 -->
+        <!-- ========================= -->
+<div id="reponseQ2" class="bloc-intro" style="display:none;">
+
+    <p id="texteQ2"></p>
+
+    <div class="arrow" onclick="allerSalle3()">➡</div>
+
+</div>
+
+
+
+</div>
+
+<script src="js/quizz2.js"></script>
+<script src="js/timer.js"></script>
+
+</body>
+</html>

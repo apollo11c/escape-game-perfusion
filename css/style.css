@@ -476,6 +476,44 @@ transform: translate(-50%, -50%);
     border-color: #00a97a;
 }
 
+/* =========================
+FLECHE SOUS LE ROND 7
+========================= */
+
+.rond-fleche::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 100%;
+
+    transform: translateX(-50%);
+
+    width: 2px;
+    height: clamp(15px, 4vw, 40px);
+
+    background: #00a97a;
+}
+
+/* pointe de flèche */
+.rond-fleche::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: calc(100% + clamp(15px, 4vw, 40px));
+
+    transform: translateX(-50%);
+
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 10px solid #00a97a;
+}
+
 /* SALLE 4 */
 
 .bloc-bas {

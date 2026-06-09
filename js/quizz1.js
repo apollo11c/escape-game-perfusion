@@ -33,6 +33,10 @@ function validerQ1() {
         // afficher le bloc réponse
         let bloc = document.getElementById("reponseQ1");
         bloc.style.display = "block";
+	// clic sur tout le bloc
+bloc.onclick = function () {
+    allerQ2();
+};
 
         // injecter le texte
         document.getElementById("texteQ1").innerHTML =
@@ -74,6 +78,10 @@ function validerQ2() {
         // afficher le bloc réponse
         let bloc = document.getElementById("reponseQ2");
         bloc.style.display = "block";
+// clic sur tout le bloc
+bloc.onclick = function () {
+    allerSalle3();
+};
 
         // injecter le texte
         document.getElementById("texteQ2").innerHTML =

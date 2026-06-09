@@ -451,6 +451,20 @@ border-right: clamp(6px, 1vw, 12px) solid #f7f5ee;
 
 /* QUIZZ 1 */
 
+/* =========================
+BOUTON QUIZZ
+========================= */
+
+#q1 button,
+#q2 button {
+
+    margin-top: 12px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
 .choix {
 	
 	position: relative;

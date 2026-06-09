@@ -65,7 +65,7 @@ function validerRonds() {
     		transition.style.display = "block";
 
     		// clic flèche → page suivante
-    		transition.querySelector(".arrow").onclick = function () {
+    		transition.onclick = function () {
         		window.location.href = "salle4.html";
     		};
         }

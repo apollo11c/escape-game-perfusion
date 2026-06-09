@@ -95,9 +95,10 @@ document.getElementById("valider").onclick = function () {
     		transition.style.display = "block";
 
     		// clic flèche → page suivante
-    		transition.querySelector(".arrow").onclick = function () {
-        		window.location.href = "quizz1.html";
-    		};
+    		// clic sur le bloc → page suivante
+transition.onclick = function () {
+    window.location.href = "quizz1.html";
+};
 	};
 
     }

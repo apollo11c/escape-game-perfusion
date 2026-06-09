@@ -63,7 +63,7 @@ popup.style.transform = "translateX(-50%)";
     popup.style.top = "";
     popup.style.bottom = "";
     popup.style.transform = "";
-
+		popup.style.display = "none";
             window.location.href = "salle2.html";
         };
 

@@ -477,6 +477,14 @@ BOUTON QUIZZ
     background: rgba(240,237,230,0.8);
     cursor: pointer;
 	font-size: clamp(11px, 1.5vw, 18px);
+
+	
+-webkit-tap-highlight-color: transparent;
+
+    touch-action: manipulation;
+
+    user-select: none;
+
 }
 
 .choix.selected {

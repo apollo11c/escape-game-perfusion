@@ -46,11 +46,24 @@ function passerPhase2() {
 
 // choix patient
 function choixPorte(p) {
+	let popup = document.getElementById("popup");
+
+popup.style.top = "2%";
+popup.style.bottom = "auto";
+popup.style.transform = "translateX(-50%)";
 
     if (p === 1) {
-        afficherPopup("Bon patient ! Cliquez pour continuer");
+        afficherPopup("Bon patient !");
 
         document.getElementById("popup").onclick = function () {
+	
+	//remettre popup normal
+    let popup = document.getElementById("popup");
+
+    popup.style.top = "";
+    popup.style.bottom = "";
+    popup.style.transform = "";
+		popup.style.display = "none";
             window.location.href = "salle2.html";
         };
 

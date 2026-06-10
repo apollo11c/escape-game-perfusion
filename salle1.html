@@ -17,8 +17,11 @@
         <div id="timerDisplay">0:00</div>
 
         <!-- CONSIGNE PHASE 1 -->
-        <div id="consigne1" class="bloc">
-            Vous arrivez près de la chambre du patient à perfuser, avec la prescription médicale en main.&nbsp;&nbsp;&nbsp&nbsp&nbsp➡
+        <div id="consigne1" class="bloc" onclick="allerSuite()">
+            Vous arrivez près de la chambre du patient à perfuser, avec la prescription médicale en main.
+<p class="continuer">
+    Cliquez pour continuer
+</p>
         </div>
 
         <!-- CONSIGNE PHASE 2 -->
@@ -73,10 +76,10 @@
         </div>
 
         <!-- CONSIGNE PHASE 3 -->
-        <div id="consigne3" class="bloc" style="display:none;">
+        <div id="consigne3" class="bloc bloc-bas-salle1" style="display:none;">
             Deux chambres sont face à vous.<br>
             Quelle est celle de votre patient ?<br>
-			Cliquez sur le numéro des chambres pour avoir plus de détails, puis cliquez sur la chambre de votre patient.
+			Cliquez sur le numéro des chambres pour avoir plus de détails, puis cliquez sur la chambre du bon patient.
         </div>
 
         <!-- ZOOM PATIENT (positions ajustables) -->
@@ -90,9 +93,11 @@
 <!-- POPUP -->
 <div id="popup" class="popup" style="display:none;">
 
-    <div class="ligne-consigne">
+    <div class="ligne-consigne" onclick="allerSuite()">
         <span id="popup-text"></span>
-        <span class="arrow">➡</span>
+        <p class="continuer">
+    Cliquez pour continuer
+</p>
     </div>
 
 </div>

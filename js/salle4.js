@@ -135,8 +135,6 @@ function ouvrirDebit() {
 		_
         </div>
 
-        <div class="rond-vert"></div>
-
         <div class="point">.</div>
 
         <div class="case-input"
@@ -312,7 +310,7 @@ function validerDebit() {
 
     <div class="contenu-perfusion">
 
-        <div class="case-debit">
+        <div class="case-debit-finale">
 
             <div class="texte-vert">
                 Débit
@@ -382,6 +380,12 @@ function validerDebit() {
 // =========================
 function demarrerPerfusion() {
 
+    // mémoriser le temps final
+    let tempsFinal = document.getElementById("timerDisplay").innerText;
+
+    localStorage.setItem("tempsFinal", tempsFinal);
+
+    // aller à la page de fin
     window.location.href = "fin.html";
 }
 

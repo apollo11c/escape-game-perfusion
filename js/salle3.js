@@ -32,9 +32,18 @@ function validerRonds() {
         // cacher ronds et bouton
         document.querySelectorAll(".zone-rond").forEach(el => el.style.display = "none");
         document.getElementById("valider").style.display = "none";
+	
+	// cacher le bloc consigne
+	document.querySelector(".bloc").style.display = "none";
 
-        // afficher bloc
-        texte.innerHTML =
+
+        
+	// afficher le bloc bonne réponse
+	let reponse = document.getElementById("reponseBloc");
+
+	reponse.style.display = "block";
+
+        document.getElementById("texte-reponse").innerHTML =
         `Bien vu ! Vous avez relevé les erreurs suivantes :<br>
         - Écriture au marqueur directement sur les poches<br>
         - Chambre compte-goutte pas assez remplie<br>
@@ -42,7 +51,6 @@ function validerRonds() {
         - Mauvaise étiquette sur la seringue ou mauvais produit administré<br>
         - Pansement opaque<br>
         - Aiguille non sécurisée laissée à découvert`;
-        popup.style.display = "block";
 
 	
 	document.getElementById("zone-rond-1").onclick = null;
@@ -55,9 +63,9 @@ function validerRonds() {
 
 
         // clic popup → page suivante
-        popup.onclick = function () {
+        reponse.onclick = function () {
 
-    		popup.style.display = "none";
+    		reponse.style.display = "none";
 		document.querySelector(".bloc").style.display = "none";
 
     		// afficher le bloc intermédiaire
@@ -65,8 +73,8 @@ function validerRonds() {
     		transition.style.display = "block";
 
     		// clic flèche → page suivante
-    		transition.querySelector(".arrow").onclick = function () {
-        		window.location.href = "salle4.html";
+    		transition.onclick = function () {
+        		window.location.href = "quizz2.html";
     		};
         }
     }

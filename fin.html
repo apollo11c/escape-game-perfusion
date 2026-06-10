@@ -15,21 +15,36 @@
 
         <div class="bloc-intro" style="--color: var(--sand1); --alpha: 0.85;">
 
-            <h1>FELICITATION</h1>
+            <h1>FELICITATIONS</h1>
 
             <p>
                 La perfusion a pu être démarée en toute sécurité !
             </p>
 
-            <h2 id="timerDisplay">0:00</h2>
+            <h2 id="tempsFinal">0:00</h2>
 
-        </div>
+        
+<button class="bouton-fin"
+        onclick="window.location.href='mentions.html'">Fin</button>
+</div>
 
     </div>
 
 </div>
 
-<script src="js/timer.js" defer></script>
+
+<script>
+
+    // récupérer le temps final
+    let temps = localStorage.getItem("tempsFinal");
+
+    // afficher
+    if (temps) {
+
+        document.getElementById("tempsFinal").innerText = temps;
+    }
+
+</script>
 
 </body>
 </html>

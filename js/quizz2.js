@@ -41,6 +41,10 @@ function validerQ1() {
         - Les mouvements du patient<br>
         - Les caractéristiques du perfuseur (fluage du tube)<br>
         - La présence d'éléments sur la ligne de perfusion (exemple : filtre)`;
+
+bloc.onclick = function () {
+    allerQ2();
+};
     }
 
     // MAUVAISE REPONSE (tu gardes ton popup)
@@ -83,6 +87,9 @@ function validerQ2() {
         // injecter le texte (réponse générique)
         document.getElementById('texteQ2').innerHTML =
         `Bonne réponse ! <br>Vous avez correctement classé les dispositifs selon leur précision.`;
+bloc.onclick = function () {
+    allerSalle4();
+};
     }
 
     // MAUVAISE REPONSE
@@ -99,47 +106,88 @@ function validerQ2() {
 // Etiquette sélectionnée (DOM element)
 let currentSelectedLabel = null;
 
-// Sélectionne une étiquette à placer
+// =========================
+// SELECTION ETIQUETTE
+// =========================
 function selectLabel(el) {
-    // Désélectionne la précédente
-    if (currentSelectedLabel) {
-        currentSelectedLabel.classList.remove('selected-label');
-    }
 
-    // Si on reclique sur la même, on la désélectionne
+    // enlever ancienne sélection
+    document.querySelectorAll('.label').forEach(function(label) {
+        label.classList.remove('selected-label');
+    });
+
+    // si déjà sélectionnée → désélectionner
     if (currentSelectedLabel === el) {
+
         currentSelectedLabel = null;
         return;
     }
 
+    // nouvelle sélection
     currentSelectedLabel = el;
+
+    // feedback visuel
     el.classList.add('selected-label');
 }
 
-// Place l'étiquette sélectionnée sur la graduation d'index donné
+// =========================
+// PLACEMENT DES ÉTIQUETTES
+// =========================
 function placeOnGraduation(index) {
+
+    // aucune étiquette sélectionnée
     if (!currentSelectedLabel) {
-        // si aucune étiquette sélectionnée, on peut afficher un message rapide
-        afficherPopup('Sélectionnez d\'abord un dispositif à placer.');
+
+        afficherPopup("Sélectionnez d'abord un dispositif à placer.");
         return;
     }
 
-    // trouver la slot correspondant à la graduation
-    let slot = document.querySelector('.graduation[data-index="' + index + '"] .slot');
+    // slot cible
+    let slot = document.querySelector(
+        '.graduation[data-index="' + index + '"] .slot'
+    );
+
     if (!slot) return;
 
-    // remettre l'étiquette dans la colonne droite si elle était déjà placée ailleurs
-    // (on gère le DOM en déplaçant l'élément)
+    // =========================
+    // si slot déjà occupé
+    // =========================
+
+    let ancienneEtiquette = slot.querySelector('.label');
+
+    if (ancienneEtiquette) {
+
+        // remettre ancienne étiquette dans la liste
+        document.getElementById("labelList")
+            .appendChild(ancienneEtiquette);
+
+        // supprimer son placement
+        delete ancienneEtiquette.dataset.placedIndex;
+    }
+
+    // =========================
+    // retirer ancienne position
+    // =========================
+
+    if (currentSelectedLabel.parentElement.classList.contains('slot')) {
+
+        currentSelectedLabel.parentElement.removeChild(currentSelectedLabel);
+    }
+
+    // =========================
+    // ajouter nouvelle étiquette
+    // =========================
+
     slot.appendChild(currentSelectedLabel);
 
-    // marquer l'index sur l'étiquette
+    // mémoriser position
     currentSelectedLabel.dataset.placedIndex = index;
 
-    // style visuel: retirer sélection
+    // enlever sélection visuelle
     currentSelectedLabel.classList.remove('selected-label');
+
     currentSelectedLabel = null;
 }
-
 
 // =========================
 // POPUP
@@ -172,4 +220,31 @@ function allerQ2() {
 // =========================
 function allerSalle4() {
     window.location.href = "salle4.html";
+}
+
+// =========================
+// REINITIALISER ETIQUETTES
+// =========================
+function reinitialiserEtiquettes() {
+
+    // récupérer toutes les étiquettes
+    let labels = document.querySelectorAll('.label');
+
+    // colonne de départ
+    let liste = document.getElementById("labelList");
+
+    labels.forEach(function(label) {
+
+        // remettre dans la liste
+        liste.appendChild(label);
+
+        // supprimer emplacement mémorisé
+        delete label.dataset.placedIndex;
+
+        // enlever sélection
+        label.classList.remove('selected-label');
+    });
+
+    // plus de sélection active
+    currentSelectedLabel = null;
 }

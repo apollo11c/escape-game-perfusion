@@ -586,6 +586,30 @@ FLECHE SOUS LE ROND 7
 
 /* SALLE 4 */
 
+.popup-haut {
+    position: absolute;
+
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: clamp(6px, 1vw, 12px);
+
+    width: 60%;
+    max-width: 400px;
+
+    background: rgba(240,237,230,0.85);
+    border-radius: 10px;
+
+    text-align: center;
+
+    font-size: clamp(10px, 1.6vw, 18px);
+}
+
+.popup-haut p {
+    margin: 0;
+}
+
 .bloc-bas {
     position: absolute;
 
@@ -603,6 +627,26 @@ FLECHE SOUS LE ROND 7
     text-align: left;
 
     font-size: clamp(10px, 1.2vw, 18px);
+}
+
+/* bouton confirmer */
+.menu-confirm {
+
+    flex: 1;
+
+    background: white;
+
+    color: #00a97a;
+
+    border: 1px solid black;
+
+    text-align: center;
+
+    padding: clamp(2px, 0.3vw, 6px);
+
+    font-size: clamp(4px, 0.6vw, 10px);
+
+    cursor: pointer;
 }
 
 /* =========================
@@ -732,6 +776,15 @@ VISUEL PERFUSION
     position: relative;
 
     cursor: pointer;
+}
+
+.case-debit-finale {
+    flex: 1;
+
+    background: white;
+    border: 1px solid black;
+
+    position: relative;
 }
 
 .case-debit:hover {

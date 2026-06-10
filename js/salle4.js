@@ -114,38 +114,28 @@ function ouvrirDebit() {
     <!-- écran saisie -->
     <div class="zone-saisie">
 
-        <div class="case-clavier effacer"
+        <div class="case-clavier-effacer"
              onclick="effacerDebit()">
-            X
+            <div>X</div>
             <div class="mini-texte">Effacer</div>
         </div>
 
         <div class="case-input"
-             onclick="selectionCase(this)">
-		_
-        </div>
+             onclick="selectionCase(this)">_</div>
 
         <div class="case-input"
-             onclick="selectionCase(this)">
-		_
-        </div>
+             onclick="selectionCase(this)">_</div>
 
         <div class="case-input"
-             onclick="selectionCase(this)">
-		_
-        </div>
+             onclick="selectionCase(this)">_</div>
 
         <div class="point">.</div>
 
         <div class="case-input"
-             onclick="selectionCase(this)">
-		_
-        </div>
+             onclick="selectionCase(this)">_</div>
 
         <div class="case-input"
-             onclick="selectionCase(this)">
-		_
-        </div>
+             onclick="selectionCase(this)">_</div>
 
         <div class="mlh">ml/h</div>
 
@@ -243,9 +233,9 @@ function entrerChiffre(chiffre) {
             return;
         }
 
-        if (remplir && c.innerHTML === "_") {
-            c.innerHTML = "0";
-        }
+        if (remplir && c.innerHTML.trim() === "_") {
+    c.innerHTML = "0";
+}
     });
 
     // remplacer les zéros inutiles par _
@@ -255,12 +245,12 @@ function entrerChiffre(chiffre) {
 
         for (let i = 0; i < index; i++) {
 
-            if (cases[i].innerHTML !== "_") {
+            if (cases[i].innerHTML.trim() !== "_") {
                 gaucheVide = false;
             }
         }
 
-        if (gaucheVide && c.innerHTML === "0") {
+        if (gaucheVide && c.innerHTML.trim() === "0") {
             c.innerHTML = "_";
         }
     });

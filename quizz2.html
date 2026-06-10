@@ -41,7 +41,9 @@
 
     <p id="texteQ1"></p>
 
-    <div class="arrow" onclick="allerQ2()">➡</div>
+    <p class="continuer">
+    Cliquez pour continuer
+</p>
 
 </div>
 
@@ -51,7 +53,9 @@
 
     <span id="popup-text"></span>
 
-    <div class="arrow">➡</div>
+    <p class="continuer">
+    Cliquez pour continuer
+</p>
 
 </div>
 </div>
@@ -66,7 +70,7 @@
     <div class="q2-grid">
         <!-- Colonne gauche : échelle verticale avec 5 graduations -->
         <div class="scale" id="scale">
-            <div class="scale-arrow">⬇</div>
+            <div class="fleche-frise"></div>
             <div class="graduations">
                 <div class="graduation" data-index="0">
                     <div class="grad-label">Pas de valeur de précision de débit dans la norme NF en ISO 8536-4</div>
@@ -94,12 +98,18 @@
         <!-- Colonne droite : liste d'étiquettes à placer -->
         <div class="label-list" id="labelList">
             <!-- L'utilisateur pourra modifier ces titres directement dans le HTML -->
-            <div class="label" onclick="selectLabel(this)" data-correct-index="1">Régulateur de débit</div>
-            <div class="label" onclick="selectLabel(this)" data-correct-index="3">Pompe volumétrique</div>
-            <div class="label" onclick="selectLabel(this)" data-correct-index="0">Roulette de débit du perfuseur</div>
-            <div class="label" onclick="selectLabel(this)" data-correct-index="4">Pousse-seringue électrique</div>
-            <div class="label" onclick="selectLabel(this)" data-correct-index="2">Diffuseur portable</div>
+            <div class="label etiquette-verte" onclick="selectLabel(this)" data-correct-index="1">Régulateur de débit</div>
+            <div class="label etiquette-claire" onclick="selectLabel(this)" data-correct-index="3">Pompe volumétrique</div>
+            <div class="label etiquette-verte" onclick="selectLabel(this)" data-correct-index="0">Roulette de débit du perfuseur</div>
+            <div class="label etiquette-verte" onclick="selectLabel(this)" data-correct-index="4">Pousse-seringue électrique</div>
+            <div class="label etiquette-claire" onclick="selectLabel(this)" data-correct-index="2">Diffuseur portable</div>
         </div>
+<button class="reset-btn"
+        onclick="reinitialiserEtiquettes()">
+
+    Réinitialiser
+
+</button>
     </div>
 
     <button onclick="validerQ2()">Valider</button>
@@ -113,7 +123,10 @@
 
     <p id="texteQ2"></p>
 
-    <div class="arrow" onclick="allerSalle3()">➡</div>
+    <p class="continuer">
+    Cliquez pour continuer
+</p>
+
 
 </div>
 

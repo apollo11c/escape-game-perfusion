@@ -889,75 +889,203 @@ VISUEL PERFUSION
     cursor: pointer;
 }
 
-/* ---------- Q2 scale and labels ---------- */
+/* QUIZZ 2 */
+
+/* =========================
+FLECHE FRISE VERTICALE
+========================= */
+
+.fleche-frise {
+
+    position: absolute;
+
+    left: 1%;
+    top: 0;
+
+    width: 0.8%;
+    height: 100%;
+
+    background: #00a97a;
+}
+
+/* triangle */
+.fleche-frise::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -1%;
+
+    transform: translateX(-50%);
+
+    border-top: clamp(8px, 1vw, 14px) solid #00a97a;
+    border-left: clamp(5px, 0.7vw, 10px) solid transparent;
+    border-right: clamp(5px, 0.7vw, 10px) solid transparent;
+}
+
+/* =========================
+ETIQUETTES
+========================= */
+
+.etiquette-verte {
+
+    background: #00a97a;
+    color: white;
+
+    border: 0.15vw solid #00a97a;
+}
+
+.etiquette-claire {
+
+    background: #abdabf;
+    color: #00a97a;
+
+    border: 0.15vw solid #00a97a;
+}
+
+/* grille globale */
 .q2-grid {
+
     display: flex;
-    gap: 20px;
+
+    gap: 3%;
+
     align-items: center;
     justify-content: center;
 }
 
+/* =========================
+COLONNE FRISE
+========================= */
+
 .scale {
+
+    position: relative;
+
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 8px;
+
+    width: 65%;
 }
 
-.scale-arrow {
-    font-size: clamp(20px, 3vw, 36px);
-}
-
+/* graduations */
 .graduations {
+
     display: flex;
     flex-direction: column;
-    gap: 12px;
+
+    gap: 2vh;
+
+    margin-left: 4%;
+
+    color: #00a97a;
 }
 
+/* une ligne */
 .graduation {
+
     display: flex;
-    align-items: center;
-    gap: 10px;
+	flex-direction: column;
+    align-items: flex-start;
+
+    gap: 0.6vh;
 }
 
+/* texte graduation */
 .grad-label {
-    min-width: 48px;
-    text-align: right;
-    color: #333;
+
+
+    text-align: left;
+
+    color: #00a97a;
+
+    font-size: clamp(9px, 1vw, 16px);
+
+    line-height: 1.2;
 }
 
+/* zone dépôt */
 .slot {
-    width: 180px;
-    min-height: 30px;
+
+    width: 42%;
+
+    min-height: clamp(20px, 4vh, 70px);
+
     background: rgba(240,237,230,0.6);
-    border-radius: 6px;
+
+    border-radius: 0.6vw;
+
     display: flex;
     align-items: center;
-    padding: 4px 8px;
+
+    padding: 1% 2%;
+
     cursor: pointer;
+position: relative;
 }
+
+/* étiquette placée dans un slot */
+.slot .label {
+
+    pointer-events: auto;
+
+    width: 100%;
+}
+
+/* =========================
+COLONNE ETIQUETTES
+========================= */
 
 .label-list {
+
     display: flex;
     flex-direction: column;
-    gap: 8px;
+
+    gap: 1.2vh;
+
+    margin-left: 4%;
 }
 
+/* étiquette */
 .label {
-    padding: 8px 12px;
-    background: rgba(240,237,230,0.9);
-    border-radius: 8px;
+
+    padding: 1% 3%;
+
+    border-radius: 0.8vw;
+
     cursor: pointer;
+
     user-select: none;
+
+    font-size: clamp(10px, 1vw, 16px);
+
+    text-align: center;
 }
 
+/* sélection */
 .label.selected-label {
-    outline: 3px solid #00a97a;
-    background: rgb(var(--bbraungreen));
-    color: white;
+
+    outline: 0.25vw solid #00a97a;
 }
 
-.slot .label {
-    background: transparent;
-    padding: 4px 8px;
+/* bouton reset */
+.reset-btn {
+
+    margin-top: 2vh;
+
+    padding: 2% 4%;
+
+    border: none;
+
+    border-radius: 0.8vw;
+
+    background: #abdabf;
+
+    color: #00a97a;
+
+    cursor: pointer;
+
+    font-size: clamp(10px, 1vw, 16px);
 }

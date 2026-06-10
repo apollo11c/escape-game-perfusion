@@ -1089,3 +1089,27 @@ COLONNE ETIQUETTES
 
     font-size: clamp(10px, 1vw, 16px);
 }
+
+/*fin*/ 
+/* =========================
+BOUTON FIN
+========================= */
+
+.bouton-fin {
+
+    margin-top: 4vh;
+
+    padding: 1.5% 5%;
+
+    border: none;
+
+    border-radius: 1vw;
+
+    background: #00a97a;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: clamp(10px, 1vw, 18px);
+}

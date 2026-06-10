@@ -382,6 +382,12 @@ function validerDebit() {
 // =========================
 function demarrerPerfusion() {
 
+    // mémoriser le temps final
+    let tempsFinal = document.getElementById("timerDisplay").innerText;
+
+    localStorage.setItem("tempsFinal", tempsFinal);
+
+    // aller à la page de fin
     window.location.href = "fin.html";
 }
 

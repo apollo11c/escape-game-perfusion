@@ -74,7 +74,7 @@ function validerRonds() {
 
     		// clic flèche → page suivante
     		transition.onclick = function () {
-        		window.location.href = "salle4.html";
+        		window.location.href = "quizz2.html";
     		};
         }
     }

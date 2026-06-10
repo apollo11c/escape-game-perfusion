@@ -135,8 +135,6 @@ function ouvrirDebit() {
 		_
         </div>
 
-        <div class="rond-vert"></div>
-
         <div class="point">.</div>
 
         <div class="case-input"
@@ -312,7 +310,7 @@ function validerDebit() {
 
     <div class="contenu-perfusion">
 
-        <div class="case-debit">
+        <div class="case-debit-finale">
 
             <div class="texte-vert">
                 Débit
